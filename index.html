@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony - Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Harmony</h1>
+                <p>Your Music Companion</p>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <nav class="sidebar">
+            <div class="nav-option active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-option">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </div>
+            <div class="nav-option">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </div>
+            <div class="nav-option">
+                <i class="fas fa-list"></i>
+                <span>Playlists</span>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="now-playing">
+                <h2>Now Playing</h2>
+                <div class="music-player">
+                    <div class="album-cover">
+                        <img src="assets/default-album-art.jpg" alt="Album Cover" id="cover">
+                        <div class="vinyl-effect">
+                            <div class="vinyl-disc"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="song-details">
+                        <h3 id="title">Song Title</h3>
+                        <p id="artist">Artist Name</p>
+                    </div>
+                    
+                    <div class="progress-area">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="time">
+                            <span id="current-time">0:00</span>
+                            <span id="max-duration">0:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="controls">
+                        <button id="repeat-btn" class="control-btn">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                        <button id="prev-btn" class="control-btn">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button id="play-pause-btn" class="control-btn play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button id="next-btn" class="control-btn">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                        <button id="shuffle-btn" class="control-btn">
+                            <i class="fas fa-random"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="volume-container">
+                        <i class="fas fa-volume-up" id="volume-icon"></i>
+                        <input type="range" min="0" max="100" value="70" class="volume-slider" id="volume-slider">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="playlist-section">
+                <h2>Your Playlist</h2>
+                <ul class="playlist" id="playlist">
+                    <!-- Songs will be added dynamically with JavaScript -->
+                </ul>
+            </div>
+        </main>
+        
+        <div class="visualizer-container">
+            <canvas id="visualizer"></canvas>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created with ❤️ by Rakesh L N</p>
+    </footer>
+
+    <audio id="audio-element"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
